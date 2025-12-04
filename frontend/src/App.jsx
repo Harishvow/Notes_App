@@ -1,32 +1,24 @@
-import { Routes, Route } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import { Route, Routes } from "react-router";
 
-// Pages (create them inside src/pages/)
-import Homepage from "./pages/Homepage";
+import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
-import NoteDetail from "./pages/NoteDetail";
+import NoteDetailPage from "./pages/NoteDetail";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Toaster /> {/* Toast notifications */}
+    <div >
+      <div data-theme="forest">
+        <button className="btn btn-primary">One</button>
+        <button className="btn btn-secondary">Two</button>
+        <button className="btn btn-accent btn-outline">Three</button></div>
+  
 
-      {/* Example button to test toast */}
-      <button
-        className="bg-blue-500 text-white px-4 py-2 m-4 rounded"
-        onClick={() => toast.success("Congrats!")}
-      >
-        Click me
-      </button>
-
-      {/* React Router Routes */}
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/create" element={<CreatePage />} />
-        <Route path="/note/:id" element={<NoteDetail />} />
+        <Route path="/note/:id" element={<NoteDetailPage />} />
       </Routes>
     </div>
   );
-}
-
+};
 export default App;
