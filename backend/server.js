@@ -15,7 +15,7 @@ dotenv.config();
 const app=express();
 const port=process.env.PORT ||5002;
 const __dirname=path.resolve();
-if(process.env.NODE_ENV!=production){
+if(process.env.NODE_ENV!="production"){
 app.use(cors({
   origin: "http://localhost:5173",
 }))}
