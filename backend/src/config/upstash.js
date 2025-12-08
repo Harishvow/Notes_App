@@ -9,5 +9,5 @@ export const ratelimit = new Ratelimit({
     url: process.env.UPSTASH_REDIS_REST_URL,
     token: process.env.UPSTASH_REDIS_REST_TOKEN,
   }),
-  limiter: Ratelimit.slidingWindow(100, "60 s"), 
+  limiter: Ratelimit.slidingWindow(10, "20 s"), 
 });
