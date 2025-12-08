@@ -4,6 +4,7 @@ import RateLimitedUI  from '../components/RateLimitedUI';
 import axios from "axios";
 import toast from 'react-hot-toast';
 import NoteCard  from '../components/NoteCard';
+import NotesNotFound  from '../components/NotesNotFound';
 
 const Homepage = () => {
   
