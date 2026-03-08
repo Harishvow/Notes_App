@@ -15,7 +15,7 @@ services:
     
 
   backend:
-   image: harishvow/notes_app
+   build: ./backend
    container_name: notesapp-backend
    restart: always
    depends_on:
@@ -28,7 +28,7 @@ services:
       - notesapps
   
   frontend:
-    image: harishvow/frontend-notes
+    build: ./frontend
     container_name: notesapp-frontend
     restart: always
     depends_on:
