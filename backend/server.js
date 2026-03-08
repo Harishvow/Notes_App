@@ -13,11 +13,11 @@ dotenv.config();
 
 
 const app=express();
-const port=process.env.PORT ||5002;
+const port=process.env.PORT ||5000;
 const __dirname=path.resolve();
 if(process.env.NODE_ENV!="production"){
 app.use(cors({
-  origin: ["http://localhost:5173",'https://notebite.onrender.com/',]
+  origin: ["http://localhost:5173",'https://notebite.onrender.com',]
 }))}
 
 app.use(express.json());
@@ -32,7 +32,7 @@ if(process.env.NODE_ENV=="production"){
 
 app.use(express.urlencoded({ extended: true }))
 connectDB().then(() => {
-  app.listen(port, () => {
-    console.log("server is running", port);
-  });
+ app.listen(port, "0.0.0.0", () => {
+  console.log(`server is running on port ${port}`);
+});
 })
